@@ -15,6 +15,12 @@ using namespace std;
 #define BLUE "\033[34m"    /* Blue */
 #define MAGENTA "\033[35m" /* Magenta */
 #define CYAN "\033[36m"    /* Cyan */
+#define RED_BOLD "\e[1m\033[31m"     /* Red Bold */
+#define GREEN_BOLD "\e[1m\033[32m"   /* Green Bold */
+#define YELLOW_BOLD "\e[1m\033[33m"  /* Yellow Bold */
+#define BLUE_BOLD "\e[1m\033[34m"    /* Blue Bold */
+#define MAGENTA_BOLD "\e[1m\033[35m" /* Magenta Bold */
+#define CYAN_BOLD "\e[1m\033[36m"    /* Cyan Bold */
 
 typedef vector<char> row;
 enum direction { Right,
@@ -30,7 +36,13 @@ enum colorNames { Red,
                   Blue,
                   Yellow,
                   Magenta,
-                  Cyan };
+                  Cyan,
+                  RedBold,
+                  GreenBold,
+                  BlueBold,
+                  YellowBold,
+                  MagentaBold,
+                  CyanBold };
 
 class PuzzleMatcher {
    public:
@@ -46,6 +58,7 @@ class PuzzleMatcher {
     vector<vector<int>> colorCodesMatrix;
     vector<int> individiualComparison;
     int currentColor;
+    string colorCycle[12] = {RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, RED_BOLD, GREEN_BOLD, YELLOW_BOLD, BLUE_BOLD, MAGENTA_BOLD, CYAN_BOLD};
     int rowDirs[8] = {0, 1, 1, 1, 0, -1, -1, -1};  // right, down-right, down, down-left, left, up-left, up, up-right
     int colDirs[8] = {1, 1, 0, -1, -1, -1, 0, 1};
 };

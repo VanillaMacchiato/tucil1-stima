@@ -71,7 +71,7 @@ void PuzzleMatcher::match(vector<row> puzzleData, string word) {
     }
 
     if (isFound) {
-        int colorCycle = currentColor % 6;
+        int colorCycle = currentColor % 12;
         // set the word to the result
         for (int i = 0; i < wordLength; i++) {
             colorCodesMatrix[rowIdx][colIdx] = colorCycle;
@@ -89,29 +89,34 @@ void PuzzleMatcher::match(vector<row> puzzleData, string word) {
 void PuzzleMatcher::printResult() {
     for (int i = 0; i < puzzleData.size(); i++) {
         for (int j = 0; j < puzzleData[i].size(); j++) {
-            switch (colorCodesMatrix[i][j]) {
-                case Red:
-                    cout << RED << puzzleData[i][j] << RESET << " ";
-                    break;
-                case Green:
-                    cout << GREEN << puzzleData[i][j] << RESET << " ";
-                    break;
-                case Blue:
-                    cout << BLUE << puzzleData[i][j] << RESET << " ";
-                    break;
-                case Yellow:
-                    cout << YELLOW << puzzleData[i][j] << RESET << " ";
-                    break;
-                case Magenta:
-                    cout << MAGENTA << puzzleData[i][j] << RESET << " ";
-                    break;
-                case Cyan:
-                    cout << CYAN << puzzleData[i][j] << RESET << " ";
-                    break;
-                default:
-                    cout << RESET << puzzleData[i][j] << " ";
-                    break;
+            if (colorCodesMatrix[i][j] == -1) {
+                cout << puzzleData[i][j] << " ";
+            } else {
+                cout << colorCycle[colorCodesMatrix[i][j]] << puzzleData[i][j] << RESET << " ";
             }
+            // switch (colorCodesMatrix[i][j]) {
+            //     case Red:
+            //         cout << RED_BOLD << puzzleData[i][j] << RESET << " ";
+            //         break;
+            //     case Green:
+            //         cout << GREEN << puzzleData[i][j] << RESET << " ";
+            //         break;
+            //     case Blue:
+            //         cout << BLUE << puzzleData[i][j] << RESET << " ";
+            //         break;
+            //     case Yellow:
+            //         cout << YELLOW << puzzleData[i][j] << RESET << " ";
+            //         break;
+            //     case Magenta:
+            //         cout << MAGENTA << puzzleData[i][j] << RESET << " ";
+            //         break;
+            //     case Cyan:
+            //         cout << CYAN << puzzleData[i][j] << RESET << " ";
+            //         break;
+            //     default:
+            //         cout << RESET << puzzleData[i][j] << " ";
+            //         break;
+            // }
         }
         cout << endl;
     }
