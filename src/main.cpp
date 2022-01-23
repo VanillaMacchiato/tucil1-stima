@@ -1,4 +1,4 @@
-#include <fstream>
+#include <chrono>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -26,17 +26,21 @@ int main() {
     vector<row> puzzleData = loader.getPuzzleData();
     vector<string> answer = loader.getAnswer();
 
-    // print puzzle data
-    for (int i = 0; i < puzzleData.size(); i++) {
-        for (int j = 0; j < puzzleData[i].size(); j++) {
-            cout << puzzleData[i][j] << " ";
-        }
-        cout << endl;
-    }
 
+
+    // Record start time
+    auto start = std::chrono::high_resolution_clock::now();
     matcher.load(puzzleData, answer);
-    matcher.calculateAndPrint();
+    matcher.calculate();
+    matcher.printResult();
 
+    // Record end time
+    auto finish = std::chrono::high_resolution_clock::now();
+
+
+    // Calculate duration
+    chrono::duration<double> elapsed = finish - start;
+    cout << "Waktu perhitungan: " << elapsed.count() * 1000 << " ms\n";
 
     return 0;
 }
