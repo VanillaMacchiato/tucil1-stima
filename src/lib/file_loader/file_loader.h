@@ -12,7 +12,7 @@ typedef vector<char> row;
 class FileLoader {
    public:
     FileLoader();
-    int load(string filename);
+    int load();
     vector<row> getPuzzleData();
     vector<string> getAnswer();
    private:

@@ -6,15 +6,22 @@ FileLoader::FileLoader() {
     answer = vector<string>();
 }
 
-int FileLoader::load(string filename) {
+int FileLoader::load() {
     int status = 0;
     bool isAnswer = false;
     string line;
+    string filename;
+
+    cout << "Word-Search Puzzle Solver" << endl;
+    cout << "Masukkan nama file: ";
+    cin >> filename;
 
     ifstream file(filename);
     if (!file.is_open()) {
-        cout << "File tidak dapat dibuka" << endl;
+        cout << "File dengan nama " << filename <<  " tidak ada atau tidak dapat dibuka" << endl;
         return 0;
+    } else {
+        cout << "\nBerhasil membuka file " << filename << endl;
     }
 
     int idx = 0;

@@ -13,34 +13,23 @@ typedef vector<char> row;
 int main() {
     FileLoader loader;
     PuzzleMatcher matcher;
-    string filename;
 
-    cout << "Masukkan nama file: ";
-    cin >> filename;
-
-    int status = loader.load(filename);
-    if (status == 0) {
-        return 0;
-    }
-
-    vector<row> puzzleData = loader.getPuzzleData();
-    vector<string> answer = loader.getAnswer();
-
-
+    int status = loader.load();
+    if (status == 0) return -1;
 
     // Record start time
     auto start = std::chrono::high_resolution_clock::now();
-    matcher.load(puzzleData, answer);
+
+    matcher.load(loader.getPuzzleData(), loader.getAnswer());
     matcher.calculate();
-    matcher.printResult();
 
     // Record end time
     auto finish = std::chrono::high_resolution_clock::now();
-
+    matcher.printResult();
 
     // Calculate duration
     chrono::duration<double> elapsed = finish - start;
-    cout << "Waktu perhitungan: " << elapsed.count() * 1000 << " ms\n";
+    cout << "Waktu eksekusi: " << elapsed.count() * 1000 << " ms\n";
 
     return 0;
 }
