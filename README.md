@@ -7,11 +7,11 @@ Bahasa yang digunakan untuk tugas kecil 1 Strategi Algoritma ini adalah bahasa p
 
 GCC yang sudah tersedia dapat digunakan untuk kompilasi program dengan membuka command-line interface (CLI) yang mengarah ke directory ini dan mengeksekusi command di bawah ini pada CLI:
 
-    > g++ src/main.cpp src/lib/file_loader/file_loader.cpp src/lib/puzzle_matcher/puzzle_matcher.cpp -o bin/main
+    g++ src/main.cpp src/lib/file_loader/file_loader.cpp src/lib/puzzle_matcher/puzzle_matcher.cpp -o bin/main
 
 Jika ingin menggunakan makefile untuk melakukan kompilasi, lakukan eksekusi pada instruksi di bawah ini:
 
-    > make
+    make
 
 Eksekusi perintah yang berhasil akan menghasilkan file binary `main` atau `main.exe` pada folder bernama `bin`.
 
@@ -20,7 +20,7 @@ Untuk menggunakan program, file executable harus sudah dibuat atau di-compile. H
 
 Jalankan file executable yang ada pada folder `bin`. Jika sistem operasi yang digunakan adalah Windows, `main.exe` digunakan. Jika sistem operasi yang digunakan berbasis Linux, jalankan file bernama `main`. Pengguna dapat menggunakan perintah pada CLI sebagai berikut:
 
-    > bin/main
+    ./bin/main
 
 Eksekusi file `main` atau `main.exe` yang sukses akan membawa pengguna ke menu Word-Search Puzzle Solver. Setelah itu, nama file yang ingin diketahui solusinya dapat diketik setelah muncul perintah untuk memasukkan nama file. 
 
