@@ -5,7 +5,12 @@ Word Search Puzzle Solver adalah program untuk mendapatkan penyelesaian dari tek
 ## Persyaratan Penggunaan
 Bahasa yang digunakan untuk tugas kecil 1 Strategi Algoritma ini adalah bahasa pemrograman C++. Untuk melakukan kompilasi pada program, diperlukan GNU Compiler Collection / GCC. Tidak ada library tambahan yang perlu diunduh. Jika sistem operasi yang digunakan dapat menjalankan file executable, artinya program ini sudah dapat digunakan.
 
-GCC yang sudah tersedia dapat digunakan untuk kompilasi program dengan membuka command-line interface (CLI) yang mengarah ke directory ini dan mengeksekusi command di bawah ini pada CLI:
+Pertama, lakukan clone pada repository ini.
+
+    git clone https://github.com/VanillaMacchiato/tucil1-stima.git
+    cd tucil1-stima
+
+Setelah itu, GCC yang sudah tersedia dapat digunakan untuk kompilasi program dengan membuka command-line interface (CLI) yang mengarah ke directory ini dan mengeksekusi command di bawah ini pada CLI:
 
     g++ src/main.cpp src/lib/file_loader/file_loader.cpp src/lib/puzzle_matcher/puzzle_matcher.cpp -o bin/main
 
